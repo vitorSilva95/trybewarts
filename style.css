@@ -31,6 +31,8 @@ main {
   display: flex;
   flex-direction: column;
   width: 675px;
+  flex-wrap: nowrap;
+  background-color: red;
 }
 
 #trybewarts-forms-logo {
@@ -38,3 +40,16 @@ main {
   justify-content: flex-end;
 }
 
+#input-name {
+  width: 50%;
+  float: left;
+}
+
+#input-lastname {
+  width: 50%;
+  float: right;
+}
+
+#divname-last {
+  display: flex;
+}
