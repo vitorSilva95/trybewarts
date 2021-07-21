@@ -35,6 +35,6 @@ main {
 
 #trybewarts-forms-logo {
   height: 500px;
-  align-items: flex-end;
+  justify-content: flex-end;
 }
 
