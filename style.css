@@ -24,32 +24,28 @@
 
 main {
   display: flex;
-  background-color: blue;
 }
 
 #evaluation-form {
   display: flex;
   flex-direction: column;
   width: 675px;
-  flex-wrap: nowrap;
-  background-color: red;
 }
 
 #trybewarts-forms-logo {
   height: 500px;
   justify-content: flex-end;
+
 }
 
-#input-name {
-  width: 50%;
-  float: left;
-}
-
-#input-lastname {
-  width: 50%;
-  float: right;
-}
-
-#divname-last {
+.divname-last {
   display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.size-element {
+  flex-basis: 45%;
+  margin: 2px 5px;
+  padding: 5px;
 }
