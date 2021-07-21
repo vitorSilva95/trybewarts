@@ -13,6 +13,16 @@
 
 .trybewarts-login {
   display: flex;
+  margin-right: 10px;
+}
+
+#login {
+  margin-right: 10px;
+}
+
+#login-button {
+  background-color: rgb(80, 0, 80);
+  border: none;
 }
 
 .header h1 {
@@ -54,13 +64,37 @@ main {
   margin-bottom: 10px;
 }
 
-hr{
+hr {
   text-align: center;
   width: 575px;
   margin-top: 15px;
 }
-#family-habilites{
+
+#family-habilites {
   display: flex;
   flex-direction: column;
   width: 40%;
+
 }
+
+#checkbox {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+
+}
+
+#section-checkbox {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+#main-info {
+  display: flex;
+}
+
+.itens {
+  flex-basis: 30%;
+}
+
