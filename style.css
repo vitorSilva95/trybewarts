@@ -17,6 +17,17 @@
 .header h1 {
   color: white;
 }
+
 .header img {
   width: 80px;
 }
+
+main {
+  display: flex;
+}
+
+#evaluation-form {
+  display: flex;
+  width: 675px;
+}
+
