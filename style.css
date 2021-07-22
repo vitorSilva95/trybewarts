@@ -124,7 +124,6 @@ hr {
 footer {
   display: flex;
   background-color: rgb(80, 80, 80);
-  width: 100%;
   margin-top: 50px;
   justify-content: center;
   color: white;
