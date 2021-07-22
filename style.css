@@ -117,3 +117,16 @@ hr {
   border: 1px solid black;
 }
 
+footer {
+  display: flex;
+  background-color: rgb(80, 80, 80);
+  width: 100%;
+  margin-top: 50px;
+  justify-content: center;
+  color: white;
+}
+
+footer p {
+  margin-top: 3px;
+}
+
