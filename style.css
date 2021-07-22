@@ -22,7 +22,7 @@
 
 #login-button {
   background-color: rgb(80, 0, 80);
-  border: none;
+  border: 1px solid black;
 }
 
 .header h1 {
@@ -108,5 +108,12 @@ hr {
 
 #field-text-area {
   width: 85%;
+}
+
+#submit-btn {
+  background-color: rgb(80, 0, 80);
+  width: 85%;
+  margin-top: 10px;
+  border: 1px solid black;
 }
 

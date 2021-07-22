@@ -30,3 +30,13 @@ for (let index = 1; index < 11; index += 1) {
 }
 const loginButton = document.getElementById('login-button');
 loginButton.addEventListener('click', checkLoginAndPassword);
+
+const mandatorybutton = document.querySelector('#label-infos');
+const enablebutton = document.querySelector('#submit-btn');
+
+function checkSelectedButton () {
+  if (mandatorybutton.value === true) {
+    enablebutton.removeAttribute('disabled');
+  }
+}
+mandatorybutton.addEventListener('click', checkSelectedButton);
