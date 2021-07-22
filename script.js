@@ -34,7 +34,7 @@ loginButton.addEventListener('click', checkLoginAndPassword);
 const mandatorybutton = document.querySelector('#agreement');
 const enablebutton = document.querySelector('#submit-btn');
 
-function checkSelectedButton () {
+function checkSelectedButton() {
   enablebutton.disabled = false;
 }
 mandatorybutton.addEventListener('click', checkSelectedButton);
