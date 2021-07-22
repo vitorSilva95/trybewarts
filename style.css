@@ -2,9 +2,14 @@
   margin: 0;
   padding: 0;
 }
+html {
+  height: 100%;
+}
 
 body {
   background-color: rgb(243, 243, 243);
+  height: 100%;
+  position: relative;
 }
 
 .header {
@@ -129,5 +134,7 @@ footer {
   justify-content: center;
   color: white;
   padding: 5px;
+  position: absolute;
+  bottom: 0;
 }
 
