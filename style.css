@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
 }
+
 html {
   height: 100%;
 }
@@ -115,7 +116,7 @@ hr {
   width: 20%;
 }
 
-#field-text-area {
+#textarea {
   width: 85%;
 }
 
@@ -138,3 +139,10 @@ footer {
   bottom: 0;
 }
 
+#counter {
+  background-color: rgb(80, 0, 80);
+  border-radius: 4px;
+  color: white;
+  padding: 5px;
+  width: 40px;
+}

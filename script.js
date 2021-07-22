@@ -28,6 +28,15 @@ for (let index = 1; index < 11; index += 1) {
   inputRadio.setAttribute('name', 'rate');
   div.appendChild(inputRadio);
 }
+
+const counterTextArea = document.getElementById('counter');
+const textArea = document.querySelector('#textarea');
+textArea.addEventListener('keyup', () => {
+  const inputLength = textArea.value.length;
+  counterTextArea.innerText = 500 - (inputLength);
+  console.log(counterTextArea);
+});
+
 const loginButton = document.getElementById('login-button');
 loginButton.addEventListener('click', checkLoginAndPassword);
 
