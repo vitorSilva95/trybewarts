@@ -47,3 +47,47 @@ function checkSelectedButton() {
   enablebutton.disabled = false;
 }
 mandatorybutton.addEventListener('click', checkSelectedButton);
+
+const forms = document.getElementById('evaluation-form');
+
+function todasMaterias() {
+  const materia = document.querySelectorAll('.subject');
+  let materias = '';
+  for (let index = 0; index < materia.length; index += 1) {
+    if (materia[index].checked === true) {
+      materias = `${materias} ${materia[index].value},`;
+    }
+  }
+  return materias;
+}
+
+function pegarValores() {
+  return {
+    name: document.getElementById('input-name').value,
+    lastName: document.getElementById('input-lastname').value,
+    email: document.getElementById('input-email').value,
+    home: document.getElementById('house').value,
+    family: document.querySelector('input[name="family"]:checked').value,
+    observacoes: document.getElementById('textarea').value,
+    avaliacao: document.querySelector('input[name="rate"]:checked').value,
+    materias: todasMaterias(),
+  };
+}
+
+const dados = (valor) =>
+  `Nome:  ${valor.name} ${valor.lastName}
+  Email: ${valor.email}
+  Casa: ${valor.home}
+  Família: ${valor.family}
+  Matérias: ${valor.materias}
+  Avaliação: ${valor.avaliacao}
+  Observações: ${valor.observacoes}`;
+
+document.getElementById('submit-btn').addEventListener('click', (event) => {
+  event.preventDefault();
+  const valor = pegarValores();
+  forms.innerText = '';
+  const p = document.createElement('p');
+  p.innerText = dados(valor);
+  forms.appendChild(p);
+});
