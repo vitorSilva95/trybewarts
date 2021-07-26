@@ -1,10 +1,14 @@
-const login = document.querySelector('#login');
-const password = document.querySelector('#password');
+const inputLogin = document.querySelector('#login');
+const inputPassword = document.querySelector('#password');
+const loginButton = document.getElementById('login-button');
+
+loginButton.addEventListener('click', checkLoginAndPassword);
+
 
 function checkLoginAndPassword() {
-  if (login.value === 'tryber@teste.com' && password.value === 123456) {
+  if (inputLogin.value === 'tryber@teste.com' && inputPassword.value === 123456) {
     alert('Olá, Tryber!');
-  } else if (login.value === 'tryber@teste.com' || password.value === 123456) {
+  } else if (inputLogin.value === 'tryber@teste.com' || inputPassword.value === 123456) {
     alert('Olá, Tryber!');
   } else {
     alert('Login ou senha inválidos.');
@@ -19,9 +23,9 @@ for (let index = 1; index < 11; index += 1) {
 
   const label = document.createElement('label');
   label.innerText = index;
-  div.appendChild(label);
   label.className = 'form-check-label';
-
+  div.appendChild(label);
+  
   const inputRadio = document.createElement('input');
   inputRadio.setAttribute('type', 'radio');
   inputRadio.setAttribute('value', index);
@@ -36,46 +40,67 @@ textArea.addEventListener('keyup', () => {
 
   const inputLength = textArea.value.length;
   counterTextArea.innerText = 500 - (inputLength);
-  console.log(counterTextArea);
 });
 
-const loginButton = document.getElementById('login-button');
-loginButton.addEventListener('click', checkLoginAndPassword);
 
-const mandatorybutton = document.querySelector('#agreement');
-const enablebutton = document.querySelector('#submit-btn');
+const agreementBox = document.querySelector('#agreement');
+const submitButton = document.getElementById('submit-btn');
 
-//Evento de click no checkbox / Habilita botão enviar se checkbox estiver marcado
-mandatorybutton.addEventListener('click', () => {
-  enablebutton.disabled === true ? enablebutton.disabled = false : enablebutton.disabled = true;
-});
-const main = document.querySelector('#main');
-const formText = document.querySelector('#evaluation-form');
-
-const inputname = document.querySelector('#input-name');
-const inputlastname = document.querySelector('#input-lastname');
-const select = document.querySelector('#house');
-const email = document.querySelector('#input-email');
-const checkbox = document.querySelector('#checkboxtext');
-const itemradio = document.querySelector('input[name="family"]:checked').value;
-console.log(itemradio);
-
-/* let radiochecked = '';
-for (let index = 0; index < radio.length; index += 1) {
-  if(radio[index].checked === true) {
-    radiochecked = radio[index].value;
+function checkSelectedButton() {
+  if(agreementBox.checked === true) {
+    submitButton.disabled = false;
+  }else {
+    submitButton.disabled = true;
   }
-} */
+}
+
+agreementBox.addEventListener('click', checkSelectedButton);
+
+const forms = document.getElementById('evaluation-form');
+
+function allSubjects() {
+  const matter = document.querySelectorAll('.subject');
+  let subjects = '';
+  for (let index = 0; index < matter.length; index += 1) {
+    if (matter[index].checked === true) {
+      subjects = `${subjects} ${matter[index].value},`;
+    }
+  }
+  return subjects;
+}
+
+function createObjectsValues() {
+  return {
+    name: document.getElementById('input-name').value,
+    lastName: document.getElementById('input-lastname').value,
+    email: document.getElementById('input-email').value,
+    home: document.getElementById('house').value,
+    family: document.querySelector('input[name="family"]:checked').value,
+    comments: document.getElementById('textarea').value,
+    assessment: document.querySelector('input[name="rate"]:checked').value,
+    subjects: allSubjects(),
+  };
+}
+
+const dados = (value) =>
+  `Nome:  ${value.name} ${value.lastName}
+  Email: ${value.email}
+  Casa: ${value.home}
+  Família: ${value.family}
+  Matérias: ${value.subjects}
+  Avaliação: ${value.assessment}
+  Observações: ${value.comments}`;
 
 
-enablebutton.addEventListener('click', (event) => {
+  submitButton.addEventListener('click', (event) => {
   event.preventDefault();
-  formText.innerHTML = '';
-  const newP = document.createElement('p');
-  newP.innerHTML = `Familia ${itemradio}`
-
-
-formText.appendChild(newP)
-
+  const value = createObjectsValues();
+  forms.innerText = '';
+  const p = document.createElement('p');
+  const h1 = document.createElement('h1');
+  h1.innerText = 'Dados Cadastrados';
+  p.className = 'p-style';
+  p.innerText = dados(value);
+  forms.appendChild(h1);
+  forms.appendChild(p);
 });
-console.log();
