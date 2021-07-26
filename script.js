@@ -88,6 +88,10 @@ document.getElementById('submit-btn').addEventListener('click', (event) => {
   const valor = pegarValores();
   forms.innerText = '';
   const p = document.createElement('p');
+  const h1 = document.createElement('h1');
+  h1.innerText = 'Dados Cadastrados';
+  p.className = 'p';
   p.innerText = dados(valor);
+  forms.appendChild(h1);
   forms.appendChild(p);
 });

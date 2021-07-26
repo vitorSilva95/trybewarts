@@ -146,3 +146,9 @@ footer {
   padding: 5px;
   width: 40px;
 }
+
+.p {
+  border: 1px solid black;
+  padding: 30px;
+  font-size: 30px;
+}
