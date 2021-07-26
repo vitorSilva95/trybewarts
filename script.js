@@ -2,9 +2,6 @@ const inputLogin = document.querySelector('#login');
 const inputPassword = document.querySelector('#password');
 const loginButton = document.getElementById('login-button');
 
-loginButton.addEventListener('click', checkLoginAndPassword);
-
-
 function checkLoginAndPassword() {
   if (inputLogin.value === 'tryber@teste.com' && inputPassword.value === 123456) {
     alert('Olá, Tryber!');
@@ -14,18 +11,19 @@ function checkLoginAndPassword() {
     alert('Login ou senha inválidos.');
   }
 }
+
+loginButton.addEventListener('click', checkLoginAndPassword);
+
 const evaluateTrybe = document.getElementById('evaluate-trybe-radio');
 
 for (let index = 1; index < 11; index += 1) {
   const div = document.createElement('div');
   div.className = 'form-check';
   evaluateTrybe.appendChild(div);
-
   const label = document.createElement('label');
   label.innerText = index;
   label.className = 'form-check-label';
   div.appendChild(label);
-  
   const inputRadio = document.createElement('input');
   inputRadio.setAttribute('type', 'radio');
   inputRadio.setAttribute('value', index);
@@ -37,19 +35,17 @@ const counterTextArea = document.getElementById('counter');
 const textArea = document.querySelector('#textarea');
 
 textArea.addEventListener('keyup', () => {
-
   const inputLength = textArea.value.length;
   counterTextArea.innerText = 500 - (inputLength);
 });
-
 
 const agreementBox = document.querySelector('#agreement');
 const submitButton = document.getElementById('submit-btn');
 
 function checkSelectedButton() {
-  if(agreementBox.checked === true) {
+  if (agreementBox.checked === true) {
     submitButton.disabled = false;
-  }else {
+  } else {
     submitButton.disabled = true;
   }
 }
@@ -91,8 +87,7 @@ const dados = (value) =>
   Avaliação: ${value.assessment}
   Observações: ${value.comments}`;
 
-
-  submitButton.addEventListener('click', (event) => {
+submitButton.addEventListener('click', (event) => {
   event.preventDefault();
   const value = createObjectsValues();
   forms.innerText = '';
