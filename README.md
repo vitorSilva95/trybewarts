@@ -23,7 +23,7 @@ git clone git@github.com:vitorSilva95/trybewarts.git
 
 ```
 ```
-cd trybewats
+cd trybewarts
 ```
 ```
 npm install
